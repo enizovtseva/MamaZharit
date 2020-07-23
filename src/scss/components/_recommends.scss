@@ -1,0 +1,31 @@
+.recommends {
+  &-item {
+    width: 123px;
+    margin: 0 auto 25px;
+    padding: 12px 7px 13px;
+    color: $dark;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid rgba($color: $dark, $alpha: .3);
+  }
+  &-title {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  &-photo {
+    height: 115px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    display: inline-block;
+    overflow: hidden;
+  }
+  &-price {
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba($color: $dark, $alpha: .75);
+  }
+}

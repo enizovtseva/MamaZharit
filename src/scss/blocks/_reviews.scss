@@ -1,0 +1,110 @@
+.reviews {
+  position: relative;
+  padding: 98px 0 60px;
+  h3 {
+    padding-left: 15px;
+  }
+  @media (max-width: 1487px) {
+    padding-left: 15px;
+  }
+  @media (max-width: 1199px) {
+    margin: 0;
+    padding: 98px 0 30px;
+    h3 { padding: 0; }
+  }
+  @media (max-width: 1100px) {
+  }
+  @media (max-width: 960px) {
+    padding: 66px 0 99px;
+  }
+  @media (max-width: 619px) {
+    padding: 40px 0 60px;
+  }
+
+  .slider-arrows {
+    position: absolute;
+    top: 148px; right: 0;
+    z-index: 2;
+    .arrow-prev svg { fill: $dark; }
+    .arrow-next svg { fill: $red; }
+    @media (max-width: 1199px) {
+      right: 15px;
+    }
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
+
+  &-slider {
+    margin-top: 76px;
+    margin-right: -15px;
+    @media (max-width: 1199px) {
+      margin-right: 0;
+    }
+    @media (max-width: 960px) {
+      margin-top: 43px;
+      .slick-list {
+        padding: 0 15px;
+      }
+    }
+    &-pagination {
+      position: relative;
+      z-index: 1;
+      margin-top: 2px;
+      @media(min-width: 960px) {
+        display: none;
+      }
+      .slick-dots {
+        justify-content: center;
+      }
+    }
+  }
+  &-item {
+    padding: 40px 14px;
+    &-panel {
+      position: relative;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: rgba(52, 51, 48, 0.56);
+      text-align: center;
+      background: $white;
+      box-shadow: $box-shadow;
+      border-radius: 15px;
+    }
+    &-author {
+      position: absolute;
+      top: -35px; left: 50%;
+      transform: translateX(-40%);
+      width: 75px; height: 75px;
+      border-radius: 50% 50% 50% 0;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+      }
+    }
+    &-content {
+      padding: 60px 18px 7px;
+    }
+    &-image {
+      padding: 7px 0;
+      display: inline-block;
+      border-top: 1px solid rgba($color: $dark, $alpha: .16);
+      border-bottom: 1px solid rgba($color: $dark, $alpha: .16);
+    }
+    &-footer {
+      padding: 13px 15px 17px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-date {
+      color: rgba(52, 51, 48, 0.36);
+    }
+  }
+}

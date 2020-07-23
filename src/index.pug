@@ -1,0 +1,1412 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	section.banner
+		.banner-slider
+			.banner-slider-item
+				h2 Мама нажарила блюда из&nbsp;качественных ингредиентов
+				p 
+					span Установите наше приложение:
+					+svg("app")
+					+svg("google-play")
+				.banner-slider-item-plate.plate-1
+					img(src="./images/boru-psd-sans-fond-1.png")
+				.banner-slider-item-plate.plate-2
+					img(src="./images/poulet-buffelo-et-bleu-sans-fond-1.png")
+			.banner-slider-item
+				h2 Мама нажарила блюда из&nbsp;качественных ингредиентов 1
+				p 
+					span Установите наше приложение:
+					+svg("app")
+					+svg("google-play")
+				.banner-slider-item-plate.plate-1
+					img(src="./images/boru-psd-sans-fond-1.png")
+				.banner-slider-item-plate.plate-2
+					img(src="./images/poulet-buffelo-et-bleu-sans-fond-1.png")
+		.banner-slider-pagination
+	
+	section.menu.d-lg-none
+		.nav-sticky.sticky
+			.nav
+				.nav-slider
+					.nav-item
+						a.nav-link.active(href="#") 
+							span Все
+					.nav-item
+						a.nav-link(href="#")
+							span Завтраки
+					.nav-item
+						a.nav-link(href="#")
+							span Салаты
+					.nav-item
+						a.nav-link(href="#")
+							span Супы
+					.nav-item
+						a.nav-link(href="#")
+							span Вторые блюда
+					.nav-item
+						a.nav-link(href="#")
+							span Десерты
+					.nav-item
+						a.nav-link(href="#")
+							span Напитки
+					.nav-item
+						a.nav-link(href="#")
+							span На компанию
+				.nav-item
+					.dropdown
+						button.btn.btn-outline-danger(type="button" id="dropdownFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+							+svg("git")(width="25" height="19")
+						.dropdown-menu.dropdown-filter(aria-labelledby="dropdownFilter")
+							a.dropdown-item(href="")
+								span Без свинины
+								+svg("ic-no-hog")
+							a.dropdown-item(href="")
+								span Веджи
+								+svg("ic-vegan")
+							a.dropdown-item(href="")
+								span Спорт 
+								+svg("ic-sport")
+							a.dropdown-item(href="")
+								span Detox
+								+svg("ic-detox")
+							a.dropdown-item(href="")
+								span Морепродукты
+								+svg("ic-seafood")
+							a.dropdown-item(href="")
+								span Новинки
+								span.badge.badge-danger NEW
+
+	section
+		h3.text-center.pl-lg-30.pl-xl-15 Популярное
+		.product-list
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+	hr.mt-10.mb-40.mb-xl-50
+	section
+		h3.text-center.pl-lg-30.pl-xl-15 Завтраки
+		.product-list
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+	hr.mt-10.mb-40.mb-xl-50
+	section
+		h3.text-center.pl-lg-30.pl-xl-15 Популярное
+		.product-list
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+	hr.mt-10.mb-40.mb-xl-50
+	section
+		h3.text-center.pl-lg-30.pl-xl-15 Завтраки
+		.product-list
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.hover
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+			.col-xl-3.col-lg-4.col-md-3
+				.product-item
+					.product-header
+						.product-header-left
+							.product-popular
+								+svg("lightning ")
+							span.badge.badge-danger НОВОЕ
+						.product-header-right
+							.product-share
+								+svg("share")
+					.product-photo
+						img(src="./images/product-photo.jpg", alt="")
+					.product-overlay
+						p Добавлено
+						span 1 шт.
+					.product-info
+						.product-like
+							+svg("like")
+						a.product-name(data-toggle="modal" data-target="#productModal") Французский тыквенный суп - пюре
+						p Помидоры, сыр, лайм, криветки, соус, авакадо, огурец, зелень, семена кунжута.
+						.row.align-items-center
+							.col-sm-6
+								span.product-price 399 руб.
+							.col-sm-6.text-right
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="1")
+									.pluse
+						.product-footer
+							div
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+							span 180 гр.
+	hr.mt-10.mb-55
+	
+	section.information
+		.slider-arrows
+			.arrow-prev
+				+svg("arrow-prev")(width="22" height="12")
+			.arrow-next
+				+svg("arrow-next")(width="36" height="12")
+		.information-slider
+			.information-item
+				.row
+					.col-md-6.col-sm-5
+						.information-left
+							.information-image
+								img(src="./images/information-1.png", alt="")
+							img.information-left-decor(src="./images/information-image.png", alt="")
+					.col-md-6.col-sm-7.text-center
+						h2.text-center Как мы работаем
+						h3.text-center «Мама говорит – мы лучшие!»
+						p 
+							em «Для нас приготовление экологически чистой #[br]и прозрачной пищи означает, что вы пробуете лучшие вкусы природы, одновременно повышая экологическую сознательность. Чтобы однажды мы все могли есть этично, наша миссия - быть частью решения.»
+						a.btn.btn-danger(href="#") Узнайте почему
+			.information-item
+				.row
+					.col-md-6.col-sm-5
+						.information-left
+							.information-image
+								img(src="./images/information-1.png", alt="")
+							img.information-left-decor(src="./images/information-image.png", alt="")
+					.col-md-6.col-sm-7.text-center
+						p 345
+		.information-slider-pagination
+
+	section.reviews
+		h3.text-center Отзывы тех, кого мы накормили
+		.slider-arrows
+			.arrow-prev
+				+svg("arrow-prev")(width="22" height="12")
+			.arrow-next
+				+svg("arrow-next")(width="36" height="12")
+		.reviews-slider
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+			.reviews-item
+				.reviews-item-panel
+					.reviews-item-author
+						img(src="./images/reviews-author.png", alt="")
+					.reviews-item-content
+						span Было очень вкусно, курьер приехал в обозначенное время. Спасибо.
+					.reviews-item-image
+						img(src="./images/reviews-image.png", alt="")
+					.reviews-item-footer
+						.reviews-item-date 12.06.2020
+						.reviews-item-name Марина
+		.reviews-slider-pagination
+
+	.modal.fade.show#productModal(tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h4.modal-title Греческий салат
+					button.ic-close(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+				.modal-body.pb-20
+					.product-modal
+						.product-photo
+							img(src="./images/product.jpg", alt="")
+							.product-photo-icons
+								+svg("ic-no-hog")
+								+svg("ic-vegan")
+								+svg("ic-sport")
+								+svg("ic-detox")
+								+svg("ic-seafood")
+						.product-info
+							p.product-name Греческий салат с грецким орехом в подаче с красной рыбой и маринованными листами винограда.
+							p Греческий салат с грецким орехом в подаче с красной рыбой, грибами, оливками под сладким соусом Де-Монто- Саль и маринованными листами винограда.
+
+						.row.align-items-center
+							.col-sm-4.col-6
+								.product-weight
+									span Вес
+									span 180 гр.
+							.col-sm-8.col-6.text-right
+								span.product-price 399 руб.
+								.product-count.is-open.d-none.d-sm-inline-flex
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+				.modal-body.product-note
+					span Греческий салат - самый популярный во всём мире овощной салат, который любят и часто готовят в Греции. Он легкий, но сытный, его можно есть и при этом чувствовать легкость. СоДержит: Следы грецких орехов.#[br]НЕ СОДЕРЖИТ ГМО.
+				.modal-body.pb-30
+					.product-modal
+						.product-info
+							p.product-info-title Состав:
+							p Помидоры черри, сыр сиртаки, огурцы, салат айсберг, перец болгарский, маслины, оливки, оливковое масло, грецкий орех,грататовый сок.
+							hr
+							p.product-info-title Энергетическая ценность (на 100 гр.)
+							.product-energy
+								.row.m-0
+									.col-2.p-0
+										p Белки
+										p 12 гр.
+									.col-2.p-0
+										p Жиры
+										p 12 гр.
+									.col-3.p-0
+										p Углеводы
+										p 12 гр.
+									.col-5.p-0
+										p Энергетическая ценность
+										p 113 ккал.
+							hr
+							p.product-info-title Срок годности
+							p 72 часа при температуре от +2 до +5 °C.
+							.text-center.d-sm-none
+								.product-count.is-open
+									.minus.disable
+									input.form-control(type="text" value="0")
+									.pluse
+				.modal-header
+					h4.modal-title Мама рекомендует
+				.modal-body.pt-35
+					h4.text-center К Вашему блюду на выбор
+					.recommends
+						.row
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-1.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-2.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-3.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-4.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-1.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-2.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-3.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+							.col-sm-3.col-6
+								.recommends-item
+									p.recommends-title Французский тыквенный суп-пюре
+									.recommends-photo
+										img(src="./images/product-4.png", alt="")
+									.recommends-price 500 руб.
+									.product-count.is-open
+										.minus.disable
+										input.form-control(type="text" value="0")
+										.pluse
+

@@ -1,0 +1,65 @@
+.form {
+  color: rgba($color: $dark, $alpha: 0.75);
+  &-row {
+    display: flex;
+    margin: 0 -10px;
+    & + & { margin-top: 15px; }
+  }
+  &-col {
+    padding: 0 10px;
+  }
+  &-label {
+    margin-bottom: 0;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba($color: $dark, $alpha: 0.75);
+  }
+  &-group {
+    margin-bottom: 25px;
+    small {
+      font-size: 14px;
+      line-height: 17px;
+      display: inline-block;
+    }
+    label {
+      font-size: 14px;
+      line-height: 21px;
+      & + .form-control { height: 48px; }
+    }
+
+    &.is-invalid {
+      .form-control {
+        border-color: $red;
+        &::-webkit-input-placeholder { color: $red; }
+        &:-ms-input-placeholder { color: $red; }
+        &::-moz-placeholder { color: $red; }
+        &:-moz-placeholder { color: $red; }
+      }
+    }
+  }
+}
+
+.form-control {
+  outline: none!important;
+  box-shadow: none!important;
+  border-bottom: 1px solid rgba($color: $dark, $alpha: 0.75);
+
+  &:focus {
+    border-color: $dark;
+  }
+
+  &::-webkit-input-placeholder {
+  }
+  &:-ms-input-placeholder {
+  }
+  &::-moz-placeholder {
+  }
+  &:-moz-placeholder {
+  }
+}
+
+textarea {
+  padding-top: 10px!important;
+  height: 70px!important;
+}

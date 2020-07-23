@@ -1,0 +1,58 @@
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.badge {
+  color: $white;
+}
+
+h2, .h2 {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 50px;
+  letter-spacing: .4px;
+  @media (max-width: 1199px) {
+    font-size: 35px;
+    line-height: 42px;
+  }
+  @media (max-width: 480px) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+h3, .h3 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 26px;
+  @media (max-width: 480px) {
+    font-size: 25px;
+  }
+}
+h4, .h4 {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 26px;
+  @media (max-width: 480px) {
+  }
+}
+h5, .h5 {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  @media (max-width: 480px) {
+  }
+}
+
+img, svg {
+  height: auto;
+  max-width: 100%;
+}
+
+em {
+  font-family: $font-family-Lifehack;
+  font-style: normal;
+  font-weight: 400;
+}

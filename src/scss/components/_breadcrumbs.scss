@@ -1,0 +1,32 @@
+.breadcrumbs {
+	margin-bottom: 42px;
+	font-size: 16px;
+	line-height: 26px;
+	display: flex;
+  @media(max-width: 1199px) {
+		margin-bottom: 40px;
+	}
+	@media (max-width: 854px) {
+		margin-bottom: 30px;
+	}
+  @media (max-width: 480px) {
+		margin-bottom: 23px;
+	}
+
+	&-item {
+
+		a {
+			color: rgba($color: $dark, $alpha: .75);
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+
+			svg { margin-right: 20px; }
+
+			&:hover, &:hover span {
+				color: $dark;
+				text-decoration: none;
+			}
+		}
+	}
+}

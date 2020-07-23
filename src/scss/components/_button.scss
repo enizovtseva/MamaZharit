@@ -1,0 +1,66 @@
+.btn {
+
+  &:hover, &:focus, &:active {
+  }
+  &.btn-dark {
+    border: 1px solid $danger;
+    &:hover, &:focus, &:active {
+      border: 1px solid $danger;
+    }
+  }
+  &.btn-outline-danger {
+    color: $dark;
+  }
+}
+
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value, $value, $value, $value, $value);
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: $btn-focus-box-shadow;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value, $value, $value, $value);
+    
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: $value!important;
+      background-color: transparent!important;
+      box-shadow: $btn-focus-box-shadow;
+      svg { stroke: $value; }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      &:focus {
+        color: $value!important;
+        background-color: transparent!important;
+        box-shadow: $btn-focus-box-shadow;
+        svg { stroke: $value; }
+      }
+    }
+  }
+}

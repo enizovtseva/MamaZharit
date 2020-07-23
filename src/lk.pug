@@ -1,0 +1,621 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	section.lk
+		.breadcrumbs
+			.breadcrumbs-item
+				a(href="/")
+					+svg("arrow-left")(width="23" height="10")
+					span Главная
+
+		h3.font-weight-bold Добро пожаловать домой!
+
+		ul.nav.nav-tabs#myTab(role="tablist")
+			li.nav-item
+				a.nav-link.active#profile-tab(data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true") Данные профиля
+			li.nav-item
+				a.nav-link#history-tab(data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false") История заказов
+			li.nav-item
+				a.nav-link#addresses-tab(data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false") Сохраненные адреса
+			li.nav-item
+				a.nav-link#favorites-tab(data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false") Избранное
+			li.nav-item
+				a.nav-link#more-tab(data-toggle="tab" href="#more" role="tab" aria-controls="more" aria-selected="false") За добавкой!
+		div.tab-content#myTabContent
+			div.tab-pane.fade.active.show#profile(role="tabpanel" aria-labelledby="profile-tab")
+				form(action="")
+					.row
+						.lk-form
+							.form-group
+								.form-control-edit
+									input.form-control(type="text" placeholder="Введите ФИО")
+									a(href="#")
+										+svg("ic-edit")
+							.form-group
+								input.form-control(type="text" placeholder="Введите телефон" value="+7 (905) 365-56-56")
+							.form-group.mt-30
+								label.form-label.m-0 Почта для кассовых чеков
+								.form-control-edit
+									input.form-control(type="email" placeholder="name@example.com")
+									a(href="#")
+										+svg("ic-edit")
+							.form-group.mt-30
+								label.form-label.m-0 Дата рождения
+								.form-control-edit
+									input.form-control(type="text" placeholder="Ввести")
+									a(href="#")
+										+svg("ic-edit")
+							.form-group.row.mt-40
+								.col-3
+									label Пол
+								.col-9.text-right
+									.form-check.d-inline-block
+										input.form-check-input#male(type="radio" name="gender" value="male" checked)
+										label.form-check-label(for="male") Мужской
+									.form-check.d-inline-block.ml-35
+										input.form-check-input#female(type="radio" name="gender" value="female")
+										label.form-check-label(for="female") Женский
+						.lk-address.d-flex.align-items-stretch
+							.address
+								h5 Ваши адреса
+								.btn.btn-danger.address-add(data-toggle="modal" data-target="#mapModal") Добавить 
+								p 0  доступных адресов
+								p ул. Бахрушина, 32, стр. 2, Москва
+								p Москва, Бизнес-центр ул. Бахрушина, 32/2
+								p Москва, улица Бахрушина, 36/14 с3
+						.col-md-12.text-center.mt-30
+							button.btn.btn-outline-danger.pr-70.pl-70.pr-md-80.pl-md-80(type="submit") Сохранить
+					
+			div.tab-pane.fade#history(role="tabpanel" aria-labelledby="history-tab")
+				h4.font-weight-bold Заказов пока нет
+				.order-history-list
+					.order-history-item
+						.d-flex.align-items-center.justify-content-between
+							.order-history-number Заказ 756000
+							.order-history-status
+								span.badge.badge-danger Отменен
+							.order-history-info
+								p Создан: 26.05 в 22:45
+								p Доставка: 26.05 с 22:45 до 23: 45
+							.order-history-price 1 345 руб.
+						.d-flex.align-items-center.justify-content-between.mt-20.mt-sm-30
+							.order-history-address Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+							a.order-history-more(data-toggle="modal" data-target="#orderModal")
+								span Подробнее
+								+svg("arrow-right-red")(width="16" height="9")
+					.order-history-item
+						.d-flex.align-items-center.justify-content-between
+							.order-history-number Заказ 756000
+							.order-history-status
+								span.badge.badge-success Доставлен
+							.order-history-info
+								p Создан: 26.05 в 22:45
+								p Доставка: 26.05 с 22:45 до 23: 45
+							.order-history-price 1 345 руб.
+						.d-flex.align-items-center.justify-content-between.mt-20.mt-sm-30
+							.order-history-address Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+							a.order-history-more(data-toggle="modal" data-target="#orderModal") 
+								span Подробнее
+								+svg("arrow-right-red")(width="16" height="9")
+					.order-history-item
+						.d-flex.align-items-center.justify-content-between
+							.order-history-number Заказ 756000
+							.order-history-status
+								span.badge.badge-warning Формируется
+							.order-history-info
+								p Создан: 26.05 в 22:45
+								p Доставка: 26.05 с 22:45 до 23: 45
+							.order-history-price 1 345 руб.
+						.d-flex.align-items-center.justify-content-between.mt-20.mt-sm-30
+							.order-history-address Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+							a.order-history-more(data-toggle="modal" data-target="#orderModal") 
+								span Подробнее
+								+svg("arrow-right-red")(width="16" height="9")
+					.order-history-item
+						.d-flex.align-items-center.justify-content-between
+							.order-history-number Заказ 756000
+							.order-history-status
+								span.badge.badge-primary Оплачен
+							.order-history-info
+								p Создан: 26.05 в 22:45
+								p Доставка: 26.05 с 22:45 до 23: 45
+							.order-history-price 1 345 руб.
+						.d-flex.align-items-center.justify-content-between.mt-20.mt-sm-30
+							.order-history-address Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+							a.order-history-more(data-toggle="modal" data-target="#orderModal") 
+								span Подробнее
+								+svg("arrow-right-red")(width="16" height="9")
+					.order-history-item
+						.d-flex.align-items-center.justify-content-between
+							.order-history-number Заказ 756000
+							.order-history-status
+								span.badge.badge-info Ожидает оплаты
+							.order-history-info
+								p Создан: 26.05 в 22:45
+								p Доставка: 26.05 с 22:45 до 23: 45
+							.order-history-price 1 345 руб.
+						.d-flex.align-items-center.justify-content-between.mt-20.mt-sm-30
+							.order-history-address Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+							a.order-history-more(data-toggle="modal" data-target="#orderModal") 
+								span Подробнее
+								+svg("arrow-right-red")(width="16" height="9")
+
+			div.tab-pane.fade#addresses(role="tabpanel" aria-labelledby="addresses-tab")
+				h4.font-weight-bold Мои адреса доставки:
+				.address-list
+					.address-item
+						.address-item-title Адрес № 1
+						.d-flex.align-items-center.justify-content-between
+							span ул. Бахрушина, 32, стр. 2, Москва
+							.address-item-action
+								a(href="#")
+									+svg("ic-edit")
+									span Изменить
+								a.text-danger(href="#")
+									+svg("ic-close")
+									span Удалить
+					.address-item
+						.address-item-title Адрес № 2
+						.d-flex.align-items-center.justify-content-between
+							span Москва, Бизнес-центр ул. Бахрушина, 32/2
+							.address-item-action
+								a(href="#")
+									+svg("ic-edit")
+									span Изменить
+								a.text-danger(href="#")
+									+svg("ic-close")
+									span Удалить
+					.address-item
+						.address-item-title Адрес № 3
+						.d-flex.align-items-center.justify-content-between
+							span Москва, улица Бахрушина, 36/14 с3
+							.address-item-action
+								a(href="#")
+									+svg("ic-edit")
+									span Изменить
+								a.text-danger(href="#")
+									+svg("ic-close")
+									span Удалить
+
+			div.tab-pane.fade#favorites(role="tabpanel" aria-labelledby="favorites-tab")
+				h4.font-weight-bold Избранное:
+				.favorites-list
+					.favorites-item
+						.favorites-item-head.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								span Блюдо
+							.favorites-item-desc
+								span Описание
+							.d-flex.align-items-center.justify-content-between.flex-1
+								.favorites-item-volume
+									span Граммы
+								.favorites-item-price
+									span Сумма
+							.favorites-item-add
+								.product-like
+									+svg("like")
+								a.text-decoration-none.favorites-more(href="#") 
+									span Подробнее
+									+svg("arrow-right-red")(width="16" height="9").ml-10
+						.favorites-item-content.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								img(src="./images/product-1.png", alt="Салат Легкий (Летний)")
+							.d-flex.align-items-center.justify-content-between.flex-1.favorites-item-info
+								.favorites-item-desc
+									.favorites-item-photo
+										img(src="./images/product-1.png", alt="Салат Легкий (Летний)")
+									div
+										p
+											b Салат Легкий (Летний)
+										p Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью редиса и салатом...
+										a.text-decoration-none(href="#") 
+											span Подробнее
+											+svg("arrow-right-red")(width="16" height="9").ml-10
+								.d-flex.align-items-center.justify-content-between.flex-1.favorites-info
+									.favorites-item-volume
+										span 105 гр.
+									.favorites-item-price
+										span Сумма 
+										b 1 050 руб.
+									.favorites-item-like
+										.product-like
+											+svg("like")
+								.favorites-item-add
+									.product-like
+										+svg("like")
+									.product-count
+										.minus
+										input.form-control(type="text" value="0")
+										.pluse
+					hr
+					.favorites-item
+						.favorites-item-head.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								span Блюдо
+							.favorites-item-desc
+								span Описание
+							.d-flex.align-items-center.justify-content-between.flex-1
+								.favorites-item-volume
+									span Граммы
+								.favorites-item-price
+									span Сумма
+							.favorites-item-add
+								.product-like
+									+svg("like")
+								a.text-decoration-none.favorites-more(href="#") 
+									span Подробнее
+									+svg("arrow-right-red")(width="16" height="9").ml-10
+						.favorites-item-content.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								img(src="./images/product-2.png", alt="Салат Легкий (Летний)")
+							.d-flex.align-items-center.justify-content-between.flex-1.favorites-item-info
+								.favorites-item-desc
+									.favorites-item-photo
+										img(src="./images/product-2.png", alt="Салат Легкий (Летний)")
+									div
+										p
+											b Салат Легкий (Летний)
+										p Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью редиса и салатом...
+										a.text-decoration-none(href="#") 
+											span Подробнее
+											+svg("arrow-right-red")(width="16" height="9").ml-10
+								.d-flex.align-items-center.justify-content-between.flex-1.favorites-info
+									.favorites-item-volume
+										span 105 гр.
+									.favorites-item-price
+										span Сумма 
+										b 1 050 руб.
+									.favorites-item-like
+										.product-like
+											+svg("like")
+								.favorites-item-add
+									.product-like
+										+svg("like")
+									.product-count
+										.minus
+										input.form-control(type="text" value="0")
+										.pluse
+					hr
+					.favorites-item
+						.favorites-item-head.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								span Блюдо
+							.favorites-item-desc
+								span Описание
+							.d-flex.align-items-center.justify-content-between.flex-1
+								.favorites-item-volume
+									span Граммы
+								.favorites-item-price
+									span Сумма
+							.favorites-item-add
+								.product-like
+									+svg("like")
+								a.text-decoration-none.favorites-more(href="#") 
+									span Подробнее
+									+svg("arrow-right-red")(width="16" height="9").ml-10
+						.favorites-item-content.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								img(src="./images/product-3.png", alt="Салат Легкий (Летний)")
+							.d-flex.align-items-center.justify-content-between.flex-1.favorites-item-info
+								.favorites-item-desc
+									.favorites-item-photo
+										img(src="./images/product-3.png", alt="Салат Легкий (Летний)")
+									div
+										p
+											b Салат Легкий (Летний)
+										p Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью редиса и салатом...
+										a.text-decoration-none(href="#") 
+											span Подробнее
+											+svg("arrow-right-red")(width="16" height="9").ml-10
+								.d-flex.align-items-center.justify-content-between.flex-1.favorites-info
+									.favorites-item-volume
+										span 105 гр.
+									.favorites-item-price
+										span Сумма 
+										b 1 050 руб.
+									.favorites-item-like
+										.product-like
+											+svg("like")
+								.favorites-item-add
+									.product-like
+										+svg("like")
+									.product-count
+										.minus
+										input.form-control(type="text" value="0")
+										.pluse
+					hr
+					.favorites-item
+						.favorites-item-head.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								span Блюдо
+							.favorites-item-desc
+								span Описание
+							.d-flex.align-items-center.justify-content-between.flex-1
+								.favorites-item-volume
+									span Граммы
+								.favorites-item-price
+									span Сумма
+							.favorites-item-add
+								.product-like
+									+svg("like")
+								a.text-decoration-none.favorites-more(href="#") 
+									span Подробнее
+									+svg("arrow-right-red")(width="16" height="9").ml-10
+						.favorites-item-content.d-flex.align-items-center.justify-content-between
+							.favorites-item-photo
+								img(src="./images/product-4.png", alt="Салат Легкий (Летний)")
+							.d-flex.align-items-center.justify-content-between.flex-1.favorites-item-info
+								.favorites-item-desc
+									.favorites-item-photo
+										img(src="./images/product-4.png", alt="Салат Легкий (Летний)")
+									div
+										p
+											b Салат Легкий (Летний)
+										p Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью редиса и салатом...
+										a.text-decoration-none(href="#") 
+											span Подробнее
+											+svg("arrow-right-red")(width="16" height="9").ml-10
+								.d-flex.align-items-center.justify-content-between.flex-1.favorites-info
+									.favorites-item-volume
+										span 105 гр.
+									.favorites-item-price
+										span Сумма 
+										b 1 050 руб.
+									.favorites-item-like
+										.product-like
+											+svg("like")
+								.favorites-item-add
+									.product-like
+										+svg("like")
+									.product-count
+										.minus
+										input.form-control(type="text" value="0")
+										.pluse
+				
+			div.tab-pane.fade#more(role="tabpanel" aria-labelledby="more-tab") 
+				h4.font-weight-bold За добавкой!
+
+	.modal.fade#mapModal(tabindex="-1" role="dialog" aria-labelledby="mapModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h4.modal-title Мой адрес
+					button.ic-close(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+				.modal-body.pb-20
+					form(action="")
+						.form-group
+							label.form-label.m-0 Адрес доставки
+							input.form-control(type="text" placeholder="Ввести адрес доставки")
+						.row
+							.col-md-3.col-6
+								.form-group.is-invalid
+									label.form-label.m-0 Кв./офис
+									input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.col-6
+								.form-group
+									label.form-label.m-0 Домофон
+									input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.col-6
+								.form-group
+									label.form-label.m-0 Подъезд
+									input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.col-6
+								.form-group.is-invalid
+									label.form-label.m-0 Этаж
+									input.form-control(type="text" placeholder="Ввести")
+						.form-group
+							label.form-label.m-0 Комментарий
+							textarea.form-control(type="text" placeholder="Поле для ввода...")
+					.alert.alert-danger
+						span Пока не доставляем в этот район
+					.map
+						#map
+						a.btn.btn-dark(href="#") Привезти сюда
+
+	.modal.fade#orderModal(tabindex="-1" role="dialog" aria-labelledby="orderModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-body.p-0
+					button.ic-close.close-small(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+					.row.m-0
+						.col-md-4.p-0.border-right
+							.pt-25.pt-md-55.pr-65.pr-md-10.pb-15.pl-15.pl-sm-40
+								.row
+									.col-12.col-sm-6.col-md-12
+										.d-flex.align-items-center.justify-content-between
+											.order-history-number Заказ 756000
+											.order-history-status.m-0
+												span.badge.badge-warning Формируется
+									.col-12.col-sm-6.col-md-12.mt-md-15
+										.order-history-info.m-0
+											p Создан: 26.05 в 22:45
+											p Доставка: 26.05 с 22:45 до 23: 45
+							.pt-15.pr-10.pb-30.pl-15.pl-md-40.orders
+								div
+									p Доставка по адресу:
+									b Москва, ул. Фурштатская, д.55 стр.1 кв. 145
+								.mt-30
+									p Получатель:
+									b Андреева Марина Андреевна
+								.mt-30
+									p Оплата:
+									b Наличными
+						.col-md-8.pt-25.pt-md-55.pr-15.pr-md-55.pb-10.pb-md-30.pl-15.pl-md-30
+							.order-item.mb-30
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info.align-items-center.p-0
+										div
+											p
+												b Салат Легкий (Летний)
+											p.d-none.d-sm-block Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью...
+											p 105 гр.
+										.col-1.col-md-2.p-0 x2  
+										.order-item-price.col-3.p-0.text-right 1 050 руб.
+							.order-item.mb-30
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info.align-items-center.p-0
+										div
+											p
+												b Салат Легкий (Летний)
+											p.d-none.d-sm-block Лeгкий освежающий салат со сладкими черри, огурцом, редисом, пряной зеленью...
+											p 105 гр.
+										.col-1.col-md-2.p-0 x2  
+										.order-item-price.col-3.p-0.text-right 1 050 руб.
+							.pagination
+								ul
+									li
+										a.arrow-prev.disable(href="#")
+											+svg("scroll-top")
+									li
+										a.active(href="#") 1
+									li
+										a(href="#") 2
+									li
+										a(href="#") 3
+									li
+										a(href="#") 4
+									li
+										a(href="#") 5
+									li
+										a(href="#") 6
+									li
+										a.arrow-next(href="#")
+											+svg("scroll-top")
+						.col-md-8.pt-0.pt-md-30.pr-15.pr-sm-40.pb-30.pl-15.pl-sm-30.pl-md-40.border-top.order-md-10.order-total
+							.d-flex.align-items-center.justify-content-between
+								b Итого: 1 150 руб.
+								button.btn.btn-outline-danger.d-none.d-md-block.pl-70.pr-70(data-toggle="modal" data-target="#orderRepeatModal") Повторить заказ
+						.col-md-4.pt-30.pr-15.pr-md-40.pb-30.pl-15.pl-md-40.border-right.border-top.order-md-9
+							.row
+								.col-12.col-sm-4.col-md-12
+									button.btn.btn-outline-danger.w-100.mb-30.mb-sm-0.mb-md-30.pl-10.pr-10.d-md-none(data-toggle="modal" data-target="#orderRepeatModal") Повторить заказ
+								.col-12.col-sm-4.col-md-12
+									button.btn.btn-outline-dark.w-100.pl-10.pr-10(data-toggle="modal" data-target="#orderCancelModal") Отменить заказ
+								.col-12.col-sm-4.col-md-12
+									button.btn.btn-danger.w-100.mt-30.mt-sm-0.mt-md-30.pl-10.pr-10(data-toggle="modal" data-target="#orderDeleteModal") Удалить
+
+	.modal.fade#orderCancelModal(tabindex="-1" role="dialog" aria-labelledby="orderCancelModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-body.p-30
+					button.ic-close.close-small.position-absolute(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+					h4.text-center Отменить заказ?
+					form(action="")
+						.form-group
+							label.form-label.m-0.text-black-50 Укажите причину, почему решили отменить заказ
+							textarea.form-control(type="text" placeholder="" style="height:45px!important")
+						.form-group.text-center
+							button.btn.btn-outline-dark.pl-70.pr-70(type="submit") Отправить
+
+	.modal.fade#orderDeleteModal(tabindex="-1" role="dialog" aria-labelledby="orderDeleteModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-body.p-30.text-center
+					button.ic-close.close-small.position-absolute(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+					h4 Удалить заказ?
+					p.mt-70.mb-70 Восстановление удаленных заказов будет невозможно.
+					button.btn.btn-danger.pl-70.pr-70(type="submit") Удалить
+
+	.modal.fade#orderRepeatModal(tabindex="-1" role="dialog" aria-labelledby="orderRepeatModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h4.modal-title Повторный заказ 756000
+					button.ic-close.close-small(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+				.modal-body
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									button.btn.btn-outline-danger.pl-10.pr-10.w-100 Заменить
+					hr
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									a(href="#") Добавить
+					hr
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									a(href="#") Уже в корзине
+					hr
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									button.btn.btn-outline-danger.pl-10.pr-10.w-100 Заменить
+					.alert.alert-danger
+						b Этих блюд нет
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									button.btn.btn-outline-danger.pl-10.pr-10.w-100 Заменить
+					hr
+					.order-item
+						.order-item-content
+							.order-item-photo
+								img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+							.order-item-info.align-items-center.p-0
+								.col-5.p-0
+									p
+										b Салат Легкий (Летний)
+									p 105 гр.
+								.col-1.p-0 x2  
+								.col-3.p-0.order-item-price 1 050 руб.
+								.col-3.p-0.text-center
+									button.btn.btn-outline-danger.pl-10.pr-10.w-100 Заменить

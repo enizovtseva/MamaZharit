@@ -1,0 +1,862 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	section.lk
+		.breadcrumbs
+			.breadcrumbs-item
+				a(href="/")
+					+svg("arrow-left")(width="23" height="10")
+					span Главная
+
+		h3.font-weight-bold Корзина
+
+		ul.nav.nav-tabs#myTab(role="tablist")
+			li.nav-item
+				a.nav-link.active#cart-tab(data-toggle="tab" href="#cart" role="tab" aria-controls="cart" aria-selected="true") Корзина
+			li.nav-item
+				a.nav-link#order-forming-tab(data-toggle="tab" href="#order-forming" role="tab" aria-controls="order-forming" aria-selected="false") Формирование заказа
+			li.nav-item
+				a.nav-link#order-processed-tab(data-toggle="tab" href="#order-processed" role="tab" aria-controls="order-processed" aria-selected="false") Заказ оформлен
+
+		div.tab-content#myTabContent
+			div.tab-pane.fade.active.show#cart(role="tabpanel" aria-labelledby="cart-tab")
+				<!-- .cart.text-center -->
+				<!-- 	h3 Ваша корзина пуста - закажите супчик у&nbsp;мамы -->
+				<!-- 	+svg("logo-small") -->
+				.order
+					.order-head.order-check-head.text-center
+						b Ваш заказ
+						.d-flex.align-items-center.justify-content-between.mt-15
+							b Общая сумма:
+							b 13 200 руб.
+					.order-number Заказ 756000
+					.row
+						.order-list.pl-15.pr-15
+							h4 Завтраки
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							h4 Салаты
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							h4 Завтраки
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							h4 Салаты
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+							hr
+							.order-item
+								.order-item-delete(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+									+svg("ic-close")(data-toggle="tooltip" data-placement="bottom" title="Удалить")
+								.order-item-top
+									.order-item-title
+										span Блюдо
+								.order-item-content
+									.order-item-photo
+										img(src="./images/product-5.png", alt="Салат Легкий (Летний)")
+									.order-item-info
+										div
+											p
+												b Салат Легкий (Летний)
+											p 105 гр.
+											p.order-item-price #[span Сумма:] 1 050 руб.
+										.product-count.is-open
+											.minus
+											input.form-control(type="text" value="2")
+											.pluse
+										
+						.order-check.pl-15.pr-15
+							.order-check-head.text-center
+								b Ваш заказ
+							.order-check-item.order-check-item-title.d-flex.align-items-center.justify-content-between
+								span Общая сумма:
+								span 253 200 руб.
+							.order-check-list
+								.order-check-item
+									.order-check-item-title
+										span Завтраки:
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+								.order-check-item
+									.order-check-item-title
+										span Салаты: 
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+								.order-check-item
+									.order-check-item-title
+										span Супы: 
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+
+							.order-check-item
+								.order-check-item-title
+									span Дабавить вам приборы?
+								.d-flex.align-items-center.justify-content-between.mt-10.mb-10
+									span Укажите количество
+									.product-count.is-open
+										.minus
+										input.form-control(type="text" value="1")
+										.pluse
+							.order-check-item
+								.order-check-item-title
+									span Выберите промокод
+								.d-flex.align-items-center.justify-content-between.mt-15.mb-25.flex-wrap.flex-lg-nowrap
+									.form-check.check-mark
+										input.form-check-input#promo(type="radio" name="promo" value="promo" checked)
+										label.form-check-label(for="promo") Промокод
+									form.d-flex.align-items-center.justify-content-between
+										.mr-30
+											input.form-control(type="text" placeholder="Введите промокод")
+											<!-- <div class="invalid-feedback">Промокод не найден</div> -->
+											<!-- <small>Курица терияки с рисом добавлена в корзину</small> -->
+										button.btn.btn-danger.btn-sm(type="submit") Применить
+								.d-flex.align-items-center.justify-content-between.mb-10
+									.form-check.check-mark
+										input.form-check-input#none(type="radio" name="promo" value="none")
+										label.form-check-label(for="none") Не выбрано
+							.order-check-item.border-0
+								.order-check-item-title
+									span Ваши баллы
+								.d-flex.align-items-center.mt-10
+									span Количество: 
+									+svg("purse")(width="14" height="12").ml-10.mr-2
+									span 1521485 балл
+								form.d-flex.align-items-center.justify-content-between
+									input.form-control(type="text" placeholder="Введите количество баллов")
+									button.btn.btn-danger.btn-sm(type="submit") Применить
+
+							.order-check-foot
+								.order-check-item.order-check-item-title.d-flex.align-items-center.justify-content-between.border-0
+									span Всего:
+									span 253 200 руб.
+								a.btn.btn-outline-danger.w-100(href="#") Продолжить
+
+					.order-foot.order-check-foot
+						.d-flex.align-items-center.justify-content-between
+							b Всего: 253 200 руб.
+							a.btn.btn-outline-danger(href="#") Продолжить
+
+					.order-footer
+						.order-check-item
+							.order-check-item-title
+								span Дабавить вам приборы?
+							.d-flex.align-items-center.justify-content-between.mt-10.mb-10
+								span Укажите количество
+								.product-count.is-open
+									.minus
+									input.form-control(type="text" value="1")
+									.pluse
+						.order-check-item.mt-10
+							.order-check-item-title
+								span Выберите промокод
+							.d-flex.align-items-center.justify-content-between.mt-15.mb-10.flex-wrap.flex-lg-nowrap
+								.form-check.check-mark.w-50
+									input.form-check-input#promo(type="radio" name="promo" value="promo" checked)
+									label.form-check-label(for="promo") Промокод
+								.form-check.check-mark.w-50
+									input.form-check-input#none(type="radio" name="promo" value="none")
+									label.form-check-label(for="none") Не выбрано
+							.d-flex.align-items-center.justify-content-between.mb-15
+								form.d-flex.align-items-center.justify-content-between.w-100
+									input.form-control(type="text" placeholder="Введите промокод")
+									button.btn.btn-danger.btn-sm(type="submit") Применить
+						.order-check-item.border-0.mt-10
+							.order-check-item-title
+								span Ваши баллы
+							.d-flex.align-items-center.mt-10
+								span Количество: 
+								+svg("purse")(width="14" height="12").mr-2
+								span 1521485 балл
+							form.d-flex.align-items-center.justify-content-between.ml-10
+								input.form-control(type="text" placeholder="Введите количество баллов")
+								button.btn.btn-danger.btn-sm(type="submit") Применить
+
+			div.tab-pane.fade#order-forming(role="tabpanel" aria-labelledby="order-forming-tab")
+				.order
+					.row
+						form.order-forming.pl-15.pr-15(action="")
+							.order-forming-item
+								.form-group
+									label.form-label Фамилия #[span.text-danger *]
+									input.form-control(type="text" value="Андреева" required)
+								.form-group
+									label.form-label Имя #[span.text-danger *]
+									input.form-control(type="text" value="Марина" required)
+								.form-group
+									label.form-label Отчество #[span.text-danger *]
+									input.form-control(type="text" value="Сергеевна" required)
+								.form-group
+									label.form-label E-mail #[span.text-danger *]
+									input.form-control(type="email" value="user@gmail.com" required)
+								.form-group
+									label.form-label Телефон #[span.text-danger *]
+									input.form-control(type="text" value="+7 (952) 365-56-46" required)
+								.form-group
+									.form-check.check-mark
+										input.form-check-input#confirm-by-phone(type="checkbox" name="confirm-by-phone" value="confirm-by-phone" checked)
+										label.form-check-label(for="confirm-by-phone") Хочу подтвердить заказ по телефону
+							.order-forming-item
+								h4 Адреса доставки
+								.form-group.order-forming-address
+									.form-check.check-mark
+										input.form-check-input#address-1(type="checkbox" name="address" value="address-1")
+										label.form-check-label(for="address-1") Новый адрес
+								.form-group.order-forming-address
+									.form-check.check-mark
+										input.form-check-input#address-2(type="checkbox" name="address" value="address-2" checked)
+										label.form-check-label(for="address-2") Москва, Бизнес-центр ул. Бахрушина, 32/2
+									.order-forming-address-edit(data-toggle="tooltip" data-placement="bottom" title="Редактировать" )
+										+svg("ic-edit")(data-toggle="modal" data-target="#mapModal")
+								.form-group.order-forming-address
+									.form-check.check-mark
+										input.form-check-input#address-3(type="checkbox" name="address" value="address-3")
+										label.form-check-label(for="address-3") ул. Бахрушина, 32, стр. 2, Москва
+									.order-forming-address-edit(data-toggle="tooltip" data-placement="bottom" title="Редактировать" )
+										+svg("ic-edit")(data-toggle="modal" data-target="#mapModal")
+								.form-group.order-forming-address
+									.form-check.check-mark
+										input.form-check-input#address-4(type="checkbox" name="address" value="address-4")
+										label.form-check-label(for="address-4") Москва, улица Бахрушина, 36/14 с3
+									.order-forming-address-edit(data-toggle="tooltip" data-placement="bottom" title="Редактировать" )
+										+svg("ic-edit")(data-toggle="modal" data-target="#mapModal")
+								.form-group
+									label.form-label Город
+									input.form-control(type="text" value="Москва")
+								.form-group
+									label.form-label Улица
+									input.form-control(type="text" value="Бахрушина")
+								.row
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Кв./офис
+											input.form-control(type="text" value="32")
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Домофон
+											input.form-control(type="text" value="32")
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Подъезд
+											input.form-control(type="text" value="1")
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Этаж
+											input.form-control(type="text" value="2")
+							.order-forming-item
+								h4 Время доставки
+								.row
+									.col-12.col-sm-6
+										.form-group
+											label.form-label Дата
+											.dropdown.dropdownDatetime
+												input.form-control#dropdownDate(type="text" value="Завтра, 18 июня" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false")
+												.dropdown-menu(aria-labelledby="dropdownDate")
+													a.dropdown-item(href="#") Сегодня, 18 июня
+													a.dropdown-item(href="#") Завтра, 19 июня
+													a.dropdown-item(href="#") Послезавтра, 20 июня
+													a.dropdown-item(href="#") 21 июня
+													a.dropdown-item(href="#") 22 июня
+													a.dropdown-item(href="#") 23 июня
+													a.dropdown-item(href="#") 24 июня
+													a.dropdown-item(href="#") 25 июня
+													a.dropdown-item(href="#") 26 июня
+													a.dropdown-item(href="#") 27 июня
+													a.dropdown-item(href="#") 28 июня
+													a.dropdown-item(href="#") 29 июня
+													a.dropdown-item(href="#") 30 июня
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Время с
+											.dropdown.dropdownDatetime
+												input.form-control#dropdownTimeFrom(type="text" value="17:30" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false")
+												.dropdown-menu(aria-labelledby="dropdownTimeFrom")
+													a.dropdown-item(href="#") 06:00
+													a.dropdown-item(href="#") 06:15
+													a.dropdown-item(href="#") 06:30
+													a.dropdown-item(href="#") 06:45
+													a.dropdown-item(href="#") 07:00
+													a.dropdown-item(href="#") 07:15
+													a.dropdown-item(href="#") 07:30
+													a.dropdown-item(href="#") 07:45
+													a.dropdown-item(href="#") 08:00
+													a.dropdown-item(href="#") 08:15
+													a.dropdown-item(href="#") 08:30
+													a.dropdown-item(href="#") 08:45
+													a.dropdown-item(href="#") 09:00
+													a.dropdown-item(href="#") 09:15
+													a.dropdown-item(href="#") 09:30
+													a.dropdown-item(href="#") 09:45
+													a.dropdown-item(href="#") 10:00
+													a.dropdown-item(href="#") 10:15
+													a.dropdown-item(href="#") 10:30
+													a.dropdown-item(href="#") 10:45
+													a.dropdown-item(href="#") 11:00
+													a.dropdown-item(href="#") 11:15
+													a.dropdown-item(href="#") 11:30
+													a.dropdown-item(href="#") 11:45
+									.col-6.col-sm-3
+										.form-group
+											label.form-label Время до
+											.dropdown.dropdownDatetime
+												input.form-control#dropdownTimeTo(type="text" value="18:30" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false")
+												.dropdown-menu(aria-labelledby="dropdownTimeTo")
+													a.dropdown-item(href="#") 06:00
+													a.dropdown-item(href="#") 06:15
+													a.dropdown-item(href="#") 06:30
+													a.dropdown-item(href="#") 06:45
+													a.dropdown-item(href="#") 07:00
+													a.dropdown-item(href="#") 07:15
+													a.dropdown-item(href="#") 07:30
+													a.dropdown-item(href="#") 07:45
+													a.dropdown-item(href="#") 08:00
+													a.dropdown-item(href="#") 08:15
+													a.dropdown-item(href="#") 08:30
+													a.dropdown-item(href="#") 08:45
+													a.dropdown-item(href="#") 09:00
+													a.dropdown-item(href="#") 09:15
+													a.dropdown-item(href="#") 09:30
+													a.dropdown-item(href="#") 09:45
+													a.dropdown-item(href="#") 10:00
+													a.dropdown-item(href="#") 10:15
+													a.dropdown-item(href="#") 10:30
+													a.dropdown-item(href="#") 10:45
+													a.dropdown-item(href="#") 11:00
+													a.dropdown-item(href="#") 11:15
+													a.dropdown-item(href="#") 11:30
+													a.dropdown-item(href="#") 11:45
+							.order-forming-item
+								h4 Способ оплаты
+								.form-group.order-forming-payment-method
+									.form-check.check-mark
+										input.form-check-input#payment-method-1(type="checkbox" name="payment-method" value="payment-method-1")
+										label.form-check-label(for="payment-method-1") 
+											span.d-block.d-sm-inline.mr-10.mr-xl-30.mb-10.mb-sm-0 Картой Visa/Mastercard/Мир на сайте
+											img(src="./images/bank-card-1.png", alt="")
+											img.ml-10.ml-xl-20(src="./images/bank-card-2.png", alt="")
+											img.ml-10.ml-xl-20(src="./images/bank-card-3.png", alt="")
+								.row.mt-20.mb-20
+									.col-12
+										.form-group
+											label.form-label ФИО владельца карты #[span.text-danger *]
+											input.form-control(type="text" placeholder="Введите" required)
+									.col-12.col-sm-5
+										.form-group
+											label.form-label Номер карты #[span.text-danger *]
+											input.form-control(type="text" placeholder="Введите" required)
+									.col-7.col-sm-4
+										.form-group
+											label.form-label Срок действия #[span.text-danger *]
+											input.form-control(type="text" placeholder="Введите" required)
+									.col-5.col-sm-3
+										.form-group
+											label.form-label CVV / CVC #[span.text-danger *]
+											input.form-control(type="text" placeholder="Введите" required)
+								.form-group.order-forming-payment-method
+									.form-check.check-mark
+										input.form-check-input#payment-method-2(type="checkbox" name="payment-method" value="payment-method-2")
+										label.form-check-label(for="payment-method-2") Картой курьеру, Apple | Google Pay
+								.form-group.order-forming-payment-method
+									.form-check.check-mark
+										input.form-check-input#payment-method-3(type="checkbox" name="payment-method" value="payment-method-3" checked)
+										label.form-check-label(for="payment-method-3") Наличными курьеру
+								.form-group
+									label.form-label Сдача с суммы
+									.order-forming-price
+										input.form-control(type="text" placeholder="Введите сумму сдачи" value="")
+										label руб.
+							.order-forming-item
+								h4 Тип доставки
+								.form-group
+									p
+										b Бесконтактная доставка
+									p.m-0 Действует только при оплате онлайн
+							.order-forming-item.border-0
+								.form-group
+									.form-check.check-mark
+										input.form-check-input#Delivery-Zones(type="checkbox" name="Delivery-Zones" value="Delivery-Zones")
+										label.form-check-label(for="Delivery-Zones") Я ознакомлен с #[a(href="#") Зонами доставки]
+								.form-group
+									.form-check.check-mark
+										input.form-check-input#offer(type="checkbox" name="offer" value="offer")
+										label.form-check-label(for="offer") Я согласен с условиями #[a(href="#") Публичного договора (оферта)]
+							.order-forming-item.border-0
+								.form-group
+									button.btn.btn-outline-dark(type="submit") Заказать
+
+										
+						.order-check.pl-15.pr-15
+							.order-check-head.text-center
+								b Ваш заказ
+							.order-check-item.order-check-item-title.d-flex.align-items-center.justify-content-between
+								span Общая сумма:
+								span 253 200 руб.
+							.order-check-list
+								.order-check-item
+									.order-check-item-title
+										span Завтраки:
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+								.order-check-item
+									.order-check-item-title
+										span Салаты: 
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+								.order-check-item
+									.order-check-item-title
+										span Супы: 
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Летний)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Лето)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Салат Легкий (Весна)
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Оригинальный Mate Libre
+										span 1 050 руб.
+									.d-flex.align-items-center.justify-content-between
+										span Приборы
+										span 1 050 руб.
+
+							.order-check-item
+								.order-check-item-title
+									span Дабавить вам приборы?
+								.d-flex.align-items-center.justify-content-between.mt-10.mb-10
+									span Укажите количество
+									.product-count.is-open
+										.minus
+										input.form-control(type="text" value="1")
+										.pluse
+							.order-check-item
+								.order-check-item-title
+									span Выберите промокод
+								.d-flex.align-items-center.justify-content-between.mt-15.mb-25.flex-wrap.flex-lg-nowrap
+									.form-check.check-mark
+										input.form-check-input#promo(type="radio" name="promo" value="promo" checked)
+										label.form-check-label(for="promo") Промокод
+									form.d-flex.align-items-center.justify-content-between
+										input.form-control(type="text" placeholder="Введите промокод")
+										button.btn.btn-danger.btn-sm(type="submit") Применить
+								.d-flex.align-items-center.justify-content-between.mb-10
+									.form-check.check-mark
+										input.form-check-input#none(type="radio" name="promo" value="none")
+										label.form-check-label(for="none") Не выбрано
+							.order-check-item.border-0
+								.order-check-item-title
+									span Ваши баллы
+								.d-flex.align-items-center.mt-10
+									span Количество: 
+									+svg("purse")(width="14" height="12").ml-10.mr-2
+									span 1521485 балл
+								form.d-flex.align-items-center.justify-content-between
+									input.form-control(type="text" placeholder="Введите количество баллов")
+									button.btn.btn-danger.btn-sm(type="submit") Применить
+
+							.order-check-foot
+								.order-check-item.order-check-item-title.d-flex.align-items-center.justify-content-between.border-0
+									span Всего:
+									span 253 200 руб.
+								a.btn.btn-outline-danger.w-100(href="#") Продолжить	
+
+			div.tab-pane.fade#order-processed(role="tabpanel" aria-labelledby="order-processed-tab")
+				.cart.text-center
+					h3 Заказ у&nbsp;мамы оформлен!
+					+svg("logo-small")
+					div
+						.cart-status
+							span Оформлен
+							span Ожидает подтверждения
+					p Дождитесь звонка от мамы.
+					p.mt-25 Все свои заказы можно найти в личном кабинете.
+					.d-flex.flex-wrap.justify-content-center
+						a.btn.btn-outline-dark.mr-15.ml-15.mt-25(href="#") Перейти на главную
+						a.btn.btn-outline-danger.mr-15.ml-15.mt-25(href="#") Перейти к истории заказов
+
+	.modal.fade#mapModal(tabindex="-1" role="dialog" aria-labelledby="mapModal" aria-hidden="false")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h4.modal-title Укажите адрес доставки
+					button.ic-close(type="button" data-dismiss="modal" aria-label="Close")
+						+svg("ic-close")(width="23" height="23")
+				.modal-body.pb-20
+					form(action="")
+						.form-group
+							.row.align-items-center
+								.col-md-7.col-lg-8
+									label.form-label.m-0 Адрес доставки
+									.dropdown.addressSearch
+										input.form-control#addressSearch(type="text" placeholder="Ввести адрес доставки" value="ул. Бахрушина, 32, стр. 2, Москва" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+										.dropdown-menu(aria-labelledby="addressSearch")
+											a.dropdown-item(href="#") Москва, ул. Бахрушина, 32, стр. 2
+											a.dropdown-item(href="#") Москва,Кинотеатр, ул. Бахрушина, 32/2
+											a.dropdown-item(href="#") Москва, Бизнес-центр ул. Бахрушина, 32/2
+											a.dropdown-item(href="#") Москва, улица Бахрушина, 36/14с3
+								.col-md-5.col-lg-4.mt-20.mt-md-0
+									a.btn.btn-outline-dark.w-100.btn-define(href="#")
+										+svg("ic-nav")
+										| Определить
+					.map
+						#map
+						a.btn.btn-dark(href="#") Ок

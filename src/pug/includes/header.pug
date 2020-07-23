@@ -1,0 +1,85 @@
+header
+  .header
+    .header-logo.d-lg-none
+      +svg("logo")(width="135" height="98")
+    .header-lg
+      .header-top
+        .header-left
+          .header-city
+            a(href="#") #[span Город] Москва
+          .header-phone
+            a(href="tel:+79655695163") +7 (965) 569-51-63
+        .header-right
+          //- button.btn.btn-outline-light(data-toggle="modal" data-target="#loginModal") Войти
+          .dropdown.profile#dropdownMenuProfile
+            button.btn.btn-outline-light#dropdownProfile(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Профиль
+            .dropdown-menu(aria-labelledby="dropdownProfile")
+              .pl-20.pr-20.text-right
+                button.ic-close.close-small(type="button" data-dismiss="modal" aria-label="Close")
+                  +svg("ic-close")(width="23" height="23")
+              hr.mb-0
+              p.dropdown-title Андреева Марина
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-user")(width="20" height="20") 
+                | Данные профиля
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-order")(width="21" height="27") 
+                | История заказов
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-location")(width="22" height="22") 
+                | Сохраненные адреса
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-like")(width="23" height="22") 
+                | Избранное
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-confetti")(width="26" height="25") 
+                | За добавкой!
+              a.dropdown-item(href="#")
+                .icon
+                  +svg("ic-output")(width="19" height="18") 
+                | ВЫЙТИ
+              hr
+          a.header-cart(href="#")
+            .header-cart-icon
+              +svg("cart")
+              span.badge.badge-danger 3
+            span Корзина
+      .header-search
+        form
+          input.form-control(type="search" placeholder="Наименование блюда" aria-label="Search")
+          button.btn.btn-link(type="submit")
+            +svg("search")(width="28" height="28")
+    .header-hamburger.d-lg-none
+      .hamburger(data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar")
+        span
+        span
+        span
+
+.modal.fade.show#loginModal(tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="false")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title Пожалуйста, укажите свой телефон
+        button.ic-close.close-small(type="button" data-dismiss="modal" aria-label="Close")
+          +svg("ic-close")(width="23" height="23")
+      .hr
+      .modal-body
+        form
+          .form-group.row.align-items-center
+            .col-6.pr-0
+              label.form-label(for="") Ваш номер телефона
+              input.form-control(type="text" placeholder="+7 (___) ___ __ __")
+            .col-6.pl-30
+              button.btn.btn-outline-danger.pl-10.pr-10.w-100 Получить код
+          .form-group
+            label.form-label(for="") Код из СМС
+            input.form-control(type="text" placeholder="Ввести код")
+          .form-group
+            button.btn.btn-danger.w-100 Далее
+          .form-group.mb-0
+            small Нажимая кнопку “Далее”, Вы принимаете условия #[a(href="#") Пользовательского соглашения]

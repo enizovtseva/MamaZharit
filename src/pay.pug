@@ -1,0 +1,41 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	section.lk
+		p
+			b Сумма к оплате: #[big 125 200 руб.]
+
+		p.mt-30.mb-80 Заказ # 87956625
+
+		form
+			.pay-card
+				.pay-card-front
+					.form-group
+						.row
+							.col-2
+								img(src="./images/bank-card-1.png", alt="")
+								img.ml-10.ml-xl-20(src="./images/bank-card-2.png", alt="")
+								+svg("chip")(width="40" height="27")
+							.col-10
+								input.form-control(type="text" placeholder="Введите номер карты" required)
+								small 4444 2222 5555 2222
+					.form-group
+						input.form-control(type="text" placeholder="Введите" required)
+						small MM / YY
+					.form-group
+						input.form-control(type="text" placeholder="Введите имя владельца карты" required)
+						small Андреева Марина Сергеевна
+					.form-group
+						small 90055 / 5568 Z 58999856
+					img.ml-10.ml-xl-20(src="./images/bank-card-3.png", alt="")
+				.pay-card-back
+					.pay-card-line
+					.pay-card-cvc
+						input.form-control(type="text" placeholder="CVV / CVC")
+						small 444
+						
+			.text-center.mt-70.w-100
+				button.btn.btn-outline-danger.pl-70.pr-70(type="submit") Оплатить
