@@ -1,3 +1,8 @@
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .container {
   display: flex;
   align-items: flex-start;
@@ -54,7 +59,7 @@
     padding: 4px 0;
     font-size: 16px;
     line-height: 26px;
-    color: rgba($color: $dark, $alpha: .6);
+    color: rgba($color: $dark, $alpha: .8);
     outline: none!important;
     &:before {
       content: '';
