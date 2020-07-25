@@ -53,7 +53,7 @@
 		"babel-polyfill": "6.26.0",
 		"bootstrap": "4.5.0",
 		"bowser": "1.9.1",
-		"jquery": "3.2.1",
+		"jquery": "3.5.1",
 		"normalize-css": "2.3.1",
 		"slick-carousel": "1.8.1",
 		"svg4everybody": "2.1.9"
