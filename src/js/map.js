@@ -21,5 +21,6 @@ function initMap( address ) {
   });
 }
 $(document).ready(function(){
-  initMap('ул. Бахрушина, 32, стр. 2, Москва');
+  var map = document.getElementById('map');
+  if(!map) { initMap('ул. Бахрушина, 32, стр. 2, Москва'); }
 })

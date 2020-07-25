@@ -190,19 +190,30 @@ $('#myTab').slick({
 //   };
 // });
 
-$(".order-prev").on("click" ,function() {
+$(".order-prev").on("click", function() {
   let scrollBlock = $(this).parents('.order-slider').find('.order-scroll'),
       scrolled = scrollBlock.scrollTop();
 
   scrollBlock.animate({ scrollTop: (scrolled - 300) });
-
 });
-$(".order-next").on("click" ,function(){
+$(".order-next").on("click", function() {
   let scrollBlock = $(this).parents('.order-slider').find('.order-scroll'),
       scrolled = scrollBlock.scrollTop();
 
   scrollBlock.animate({ scrollTop: (scrolled + 300) });
+});
 
+$(".product-count").on("click", '.minus', function() {
+  let _this = $(this),
+      _input = _this.parents('.product-count').find('input'),
+      _value = parseInt(_input.val());
+  if(_value > 0) _input.val(parseInt(_value - 1));
+});
+$(".product-count").on("click", '.pluse', function() {
+  let _this = $(this),
+      _input = _this.parents('.product-count').find('input'),
+      _value = parseInt(_input.val());
+  _input.val(parseInt(_value + 1));
 });
 
 $('.nav-tabs').each(function(i, tabs) {
