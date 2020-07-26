@@ -78,7 +78,11 @@
       transform: translateX(-40%);
       width: 75px; height: 75px;
       border-radius: 50% 50% 50% 0;
+      background-color: #F9F5F5;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
         position: absolute;
         top: 50%; left: 50%;
@@ -86,6 +90,9 @@
         min-width: 100%;
         min-height: 100%;
         max-width: none;
+      }
+      svg {
+        width: 47px; height: 47px;
       }
     }
     &-content {
@@ -96,10 +103,34 @@
       }
     }
     &-image {
+      width: 100%;
+      max-width: 255px;
+      margin: auto;
       padding: 7px 0;
       display: inline-block;
       border-top: 1px solid rgba($color: $dark, $alpha: .16);
       border-bottom: 1px solid rgba($color: $dark, $alpha: .16);
+      .image {
+        position: relative;
+        width: 100%; height: 200px;
+        background-color: #F9F6F6;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 86px; height: 68px;
+        }
+        img {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%; min-height: 100%;
+          width: auto;
+          max-width: none;
+        }
+      }
     }
     &-footer {
       padding: 13px 15px 17px;
