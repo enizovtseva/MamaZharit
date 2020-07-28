@@ -1,73 +1,75 @@
 .sidebar.collapse#sidebar
-  .logo.text-center.d-none.d-lg-block
-    +svg("logo")(width="172" height="131")
-  .sidebar-top.d-lg-none
-    button.btn.btn-outline-light(data-toggle="modal" data-target="#loginModal") Войти
-    .header-city
-      a(href="#") #[span Город] Москва
-    .hamburger(data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar")
-      +svg("ic-close")(width="23" height="23")
-  .header-search
-    form
-      input.form-control(type="search" placeholder="Наименование блюда" aria-label="Search")
-      button.btn.btn-link(type="submit")
-        +svg("search")(width="28" height="28")
-  .sidebar-menu
-    ul.nav.flex-column
-      li.nav-item
-        a.nav-link.active(href="#")
-          +svg("ic-breakfast")(height="30")
-          span Завтраки
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-salad")(height="31")
-          span Салаты
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-soup")(height="31")
-          span Супы
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-chicken")(height="30")
-          span Вторые блюда
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-dessert")(height="31")
-          span Десерты
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-beverage")(height="31")
-          span Напитки
-      li.nav-item
-        a.nav-link(href="#")
-          +svg("ic-to-company")(height="31")
-          span На компанию
-  .sidebar-filter
-    .sidebar-filter-title(data-toggle="collapse" data-target="#sidebarFilter" aria-expanded="true" aria-controls="sidebarFilter")
-      b.mr-2 Фильтры
-      +svg("arrow-top")(width="10" height="11")
-    ul.nav.collapse.show#sidebarFilter
-      li.nav-item
-        a.nav-link.active(href="#")
-          span Без свинины
-          +svg("ic-no-hog")
-      li.nav-item
-        a.nav-link(href="#")
-          span Веджи
-          +svg("ic-vegan")
-      li.nav-item
-        a.nav-link(href="#")
-          span Спорт 
-          +svg("ic-sport")
-      li.nav-item
-        a.nav-link(href="#")
-          span Detox
-          +svg("ic-detox")
-      li.nav-item
-        a.nav-link(href="#")
-          span Морепродукты
-          +svg("ic-seafood")
-      li.nav-item
-        a.nav-link(href="#")
-          span Новинки
-          span.badge.badge-danger NEW
+  .sidebar-fixed
+    .sidebar-bg
+      a.logo.text-center.d-none.d-lg-block(href="/")
+        +svg("logo")(width="172" height="131")
+      .sidebar-top.d-lg-none
+        button.btn.btn-outline-light(data-toggle="modal" data-target="#loginModal") Войти
+        .header-city
+          a(href="#") #[span Город] Москва
+        .hamburger(data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar")
+          +svg("ic-close")(width="23" height="23")
+      .header-search
+        form
+          input.form-control(type="search" placeholder="Наименование блюда" aria-label="Search")
+          button.btn.btn-link(type="submit")
+            +svg("search")(width="28" height="28")
+      .sidebar-menu
+        ul.nav.flex-column
+          li.nav-item
+            a.nav-link.active(href="#")
+              +svg("ic-breakfast")(height="30")
+              span Завтраки
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-salad")(height="31")
+              span Салаты
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-soup")(height="31")
+              span Супы
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-chicken")(height="30")
+              span Вторые блюда
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-dessert")(height="31")
+              span Десерты
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-beverage")(height="31")
+              span Напитки
+          li.nav-item
+            a.nav-link(href="#")
+              +svg("ic-to-company")(height="31")
+              span На компанию
+    .sidebar-filter
+      .sidebar-filter-title(data-toggle="collapse" data-target="#sidebarFilter" aria-expanded="true" aria-controls="sidebarFilter")
+        b.mr-2 Фильтры
+        +svg("arrow-top")(width="10" height="11")
+      ul.nav.collapse.show#sidebarFilter
+        li.nav-item
+          a.nav-link.active(href="#")
+            span Без свинины
+            +svg("ic-no-hog")
+        li.nav-item
+          a.nav-link(href="#")
+            span Веджи
+            +svg("ic-vegan")
+        li.nav-item
+          a.nav-link(href="#")
+            span Спорт 
+            +svg("ic-sport")
+        li.nav-item
+          a.nav-link(href="#")
+            span Detox
+            +svg("ic-detox")
+        li.nav-item
+          a.nav-link(href="#")
+            span Морепродукты
+            +svg("ic-seafood")
+        li.nav-item
+          a.nav-link(href="#")
+            span Новинки
+            span.badge.badge-danger NEW

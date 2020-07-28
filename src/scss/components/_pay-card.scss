@@ -3,18 +3,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media(max-width: 690px) {
+    flex-direction: column;
+  }
   &-front,
   &-back {
     width: 472px; height: 272px;
     border-radius: 15px;
     overflow: hidden;
+
+    @media(max-width: 768px) {
+      width: 448px; height: 258px;
+      max-width: 100%;
+    }
+    @media(max-width: 690px) {
+      width: 384px; height: 242px;
+      max-width: 100%;
+    }
   }
   &-front {
     position: relative;
     z-index: 1;
     margin-right: 270px;
+    padding: 15px;
     background: #343330;
     box-shadow: 0px 15px 30px rgba(52, 51, 48, 0.11);
+    @media(max-width: 768px) {
+      margin-right: 202px;
+    }
+    @media(max-width: 690px) {
+      margin-right: 0;
+      padding: 11px 15px;
+    }
     .form-control {
       font-size: 14px!important; height: 42px!important;
       color: $white!important;
@@ -41,17 +61,134 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    color: rgba(52, 51, 48, 0.42);
     background: #FBFBFB;
     box-shadow: 0px 15px 30px rgba(52, 51, 48, 0.11);
+    @media(max-width: 768px) {
+      margin-top: 35px;
+      margin-left: 200px;
+    }
+    @media(max-width: 690px) {
+      position: relative;
+      margin-top: -73px;
+      margin-left: 0;
+      padding: 55px 15px 26px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .form-group {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    label {
+      font-size: 14px;
+      line-height: 26px;
+      display: none;
+      @media(max-width: 690px) {
+        display: block;
+        margin-top: 18px;
+      }
+    }
+  }
+  &-icons {
+    @media(max-width: 370px) { padding-right: 0; }
+    img {
+      &:nth-child(1) {
+        width: 46px;
+        @media(max-width: 690px) { width: 40px; }
+        @media(max-width: 370px) { width: 38px; }
+      }
+      &:nth-child(2) {
+        width: 38px;
+        margin-left: 20px;
+        @media(max-width: 1024px) { margin-left: 10px; }
+        @media(max-width: 690px) { width: 32px; }
+        @media(max-width: 370px) { width: 30px; }
+      }
+    }
+  }
+  &-chip {
+    margin-top: 30px;
+    margin-left: 20px;
+    @media(max-width: 768px) {
+      margin-top: 25px;
+      margin-left: 15px;
+    }
+    @media(max-width: 690px) {
+      margin-top: 26px;
+      margin-left: 19px;
+      svg { width: 35px; height: 25px; }
+    }
+  }
+  &-number {
+    margin-top: 25px;
+    margin-bottom: 2px!important;
+    padding-right: 30px;
+    @media(max-width: 768px) {
+      margin-top: 22px;
+    }
+    @media(max-width: 690px) {
+      margin-top: 8px;
+    }
+    @media(max-width: 370px) {
+      padding-right: 0;
+    }
+  }
+  &-date {
+    margin-bottom: 3px!important;
+    padding-left: 10px;
+    @media(max-width: 768px) {
+      margin-bottom: 0!important;
+    }
+    @media(max-width: 690px) {
+      padding-left: 7px;
+    }
+  }
+  &-holder {
+    margin-bottom: 0!important;
+    padding-left: 10px;
+    padding-right: 30px;
+    @media(max-width: 690px) {
+      padding-left: 7px;
+      margin-top: -1px;
+    }
+    @media(max-width: 370px) {
+      padding-right: 0;
+    }
+  }
+  &-id {
+    padding-left: 10px;
+    margin-bottom: 0!important;
+    @media(max-width: 690px) {
+      padding-left: 7px;
+      margin-top: 1px;
+    }
   }
   &-line {
     width: 100%; height: 56px;
     margin-top: 38px;
     background-color: rgba(52, 51, 48, 0.5);
+    @media(max-width: 768px) {
+      height: 52px;
+      margin-top: 40px;
+    }
+    @media(max-width: 690px) {
+      display: none;
+    }
   }
   &-cvc {
     width: 160px;
     margin: 28px 23px;
+    @media(max-width: 768px) {
+      width: 175px;
+      margin: 25px 12px;
+    }
+    @media(max-width: 690px) {
+      width: 162px;
+      margin: 0 0 0 12px;
+    }
     
     .form-control { font-size: 14px!important; height: 42px!important; }
     small {
@@ -60,6 +197,18 @@
       margin-top: 3px;
       color: rgba(52, 51, 48, 0.75);
       text-shadow: 0px 5px 10px rgba(52, 51, 48, 0.11);
+    }
+  }
+  &-note {
+    max-width: 280px;
+    margin: 14px auto 0;
+    font-size: 9px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+    @media(max-width: 690px) {
+      display: block;
     }
   }
 }

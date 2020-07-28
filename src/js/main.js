@@ -2,7 +2,6 @@ svg4everybody();
 
 // @include('detect.js')
 // @include('globals.js')
-// @include('map.js')
 
 $('.banner-slider').slick({
   slidesToShow: 1,
@@ -78,15 +77,32 @@ $('.reviews-slider').slick({
   ]
 });
 
-var stickyOffset = 0;
-if($('.sticky').length > 0) stickyOffset = $('.sticky').offset().top;
 $(window).scroll(function(e){
   if($('.sticky').length > 0) {
-    let sticky = $('.sticky'),
-        scroll = $(window).scrollTop();
 
-    if (scroll > (stickyOffset + 150)) sticky.addClass('fixed');
-    else sticky.removeClass('fixed');
+    if ($(window).scrollTop() > $('.sticky-start').offset().top) $('.sticky').addClass('fixed');
+    else $('.sticky').removeClass('fixed');
+  }
+
+  if($('.sidebar-fixed').length > 0) {
+    let sidebar = $('.sidebar-fixed'),
+        fixedStop = $('.fixed-stop').offset().top - sidebar.height() - 29;
+
+    if ($(window).scrollTop() > 0 && $(window).scrollTop() <= fixedStop) {
+      sidebar.removeClass('absolute').css('top', '0');
+      sidebar.addClass('fixed');
+    }
+    else if ($(window).scrollTop() > fixedStop) {
+      if(fixedStop > sidebar.height()) {
+        let top = sidebar.offset().top;
+        sidebar.removeClass('fixed');
+        sidebar.addClass('absolute').css('top', top + 'px');
+      }
+    }
+    else {
+      sidebar.removeClass('fixed');
+      sidebar.removeClass('absolute').removeAttr('style');
+    }
   }
 });
 
@@ -120,76 +136,6 @@ $('#myTab').slick({
   variableWidth: true,
 });
 
-// $('.order-list').slick({
-//   infinite: false,
-//   vertical: true,
-//   swipeToSlide: true,
-//   verticalSwiping: true,
-//   mobileFirst: true,
-//   responsive: [
-//     {
-//       breakpoint: 900,
-//       settings: 'unslick'
-//     },
-//   ]
-// });
-// $('.order-check-list').slick({
-//   infinite: false,
-//   vertical: true,
-//   swipeToSlide: true,
-//   verticalSwiping: true,
-// });
-// $('.order-list', '.order-check-list').each(function() {
-//   this.slick.getSlideCount = function() {
-//     var _ = this, slidesTraversed, swipedSlide, centerOffset;
-
-//     centerOffset = _.options.centerMode === true ? _.slideWidth * Math.floor(_.options.slidesToShow / 2) : 0;
-
-//     if (_.options.swipeToSlide === true) {
-//       _.$slideTrack.find('.slick-slide').each(function(index, slide) {
-//         var offsetPoint = slide.offsetLeft,
-//           outerSize = $(slide).outerWidth();
-        
-//         if(_.options.vertical === true) {
-//           offsetPoint = slide.offsetTop;
-//           outerSize = $(slide).outerHeight();
-//         }
-//         if (offsetPoint - centerOffset + (outerSize / 2) > (_.swipeLeft * -1)) {
-//           swipedSlide = slide;
-//           return false;
-//         }
-//       });
-//       slidesTraversed = Math.abs($(swipedSlide).attr('data-slick-index') - _.currentSlide) || 1;
-      
-//       return slidesTraversed;
-//     } else {
-//       return _.options.slidesToScroll;
-//     }
-
-//   };
-  
-//   this.slick.getNavigableIndexes = function() {
-//     var _ = this,
-//         breakPoint = 0,
-//         counter = 0,
-//         indexes = [],
-//         max;
-//     if (_.options.infinite === false) {
-//       max = _.slideCount;
-//     } else {
-//       breakPoint = _.options.slideCount * -1;
-//       counter = _.options.slideCount * -1;
-//       max = _.slideCount * 2;
-//     }
-//     while (breakPoint < max) {
-//       indexes.push(breakPoint);
-//       breakPoint = counter + _.options.slidesToScroll;
-//       counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
-//     }
-//     return indexes;
-//   };
-// });
-
 $(".order-prev").on("click", function() {
   let scrollBlock = $(this).parents('.order-slider').find('.order-scroll'),
       scrolled = scrollBlock.scrollTop();
@@ -207,13 +153,26 @@ $(".product-count").on("click", '.minus', function() {
   let _this = $(this),
       _input = _this.parents('.product-count').find('input'),
       _value = parseInt(_input.val());
-  if(_value > 0) _input.val(parseInt(_value - 1));
+  if (_value > 0) {
+    _input.val(parseInt(_value - 1));
+    if (_value - 1 == 0) {
+      _this.parents('.product-count').find('.minus').addClass('disable');
+      _this.parents('.product-count').removeClass('is-open');
+    }
+  }
 });
 $(".product-count").on("click", '.pluse', function() {
   let _this = $(this),
       _input = _this.parents('.product-count').find('input'),
       _value = parseInt(_input.val());
+  _this.parents('.product-count').find('.minus').removeClass('disable');
+  _this.parents('.product-count').addClass('is-open');
   _input.val(parseInt(_value + 1));
+});
+
+$(".sidebar-filter").on("click", '.nav-link', function(e) {
+  e.preventDefault();
+  $(this).toggleClass('active');
 });
 
 $('.nav-tabs').each(function(i, tabs) {
@@ -228,3 +187,5 @@ $('.nav-tabs').each(function(i, tabs) {
     })
   });
 });
+
+// @include('map.js')

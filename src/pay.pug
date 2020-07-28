@@ -8,34 +8,59 @@ block content
 		p
 			b Сумма к оплате: #[big 125 200 руб.]
 
-		p.mt-30.mb-80 Заказ # 87956625
+		p.mt-30.mb-55.mb-sm-80 Заказ # 87956625
 
 		form
 			.pay-card
 				.pay-card-front
-					.form-group
-						.row
-							.col-2
-								img(src="./images/bank-card-1.png", alt="")
-								img.ml-10.ml-xl-20(src="./images/bank-card-2.png", alt="")
-								+svg("chip")(width="40" height="27")
-							.col-10
+					.row
+						.col-4.pay-card-icons
+							img(src="./images/bank-card-1.png", alt="")
+							img(src="./images/bank-card-2.png", alt="")
+							.pay-card-chip
+								<svg width="40" height="27" viewBox="0 0 40 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="0.761719" y="0.363189" width="39.1797" height="25.4879" rx="5" fill="url(#paint0_linear)"/>
+									<path d="M15.5422 0.285156V6.19598C15.5422 8.9574 13.3037 11.196 10.5422 11.196H5.4969C3.277 11.196 1.47742 12.9956 1.47742 15.2155V15.2155C1.47742 17.4354 3.277 19.2349 5.4969 19.2349H12.4832C15.8583 19.2349 17.7023 23.171 15.5422 25.7643V25.7643" stroke="#7A6A2C" stroke-width="0.8"/>
+									<path d="M20.3456 25.8953V20.0588C20.3456 17.2974 22.5842 15.0588 25.3456 15.0588L34.6677 15.0588C36.905 15.0588 38.7188 13.2451 38.7188 11.0077V11.0077C38.7188 8.77034 36.905 6.95661 34.6677 6.95661H25.3456C22.5842 6.95661 20.3456 4.71803 20.3456 1.9566V0.349974" stroke="#7A6A2C" stroke-width="0.8"/>
+									<path d="M0.851563 5.84432H19.1868C21.8166 5.84432 23.9969 7.8815 24.1753 10.5053L24.8957 21.1049C25.074 23.7287 27.2714 25.7659 29.9012 25.7659V25.7659V25.7659C32.4907 25.7659 34.5899 23.6666 34.5899 21.0771V10.8443C34.5899 8.08289 36.8285 5.84432 39.5899 5.84432H39.6743" stroke="#7A6A2C" stroke-width="0.8"/>
+									<defs>
+										<linearGradient id="paint0_linear" x1="20.3516" y1="0.363189" x2="20.3516" y2="25.8511" gradientUnits="userSpaceOnUse">
+											<stop stop-color="#C9B45E"/>
+											<stop offset="0.25" stop-color="#E2C655"/>
+											<stop offset="0.619792" stop-color="#DBC055"/>
+											<stop offset="0.78125" stop-color="#EBCA44"/>
+											<stop offset="0.942708" stop-color="#D3BB58"/>
+										</linearGradient>
+									</defs>
+								</svg>
+						.col-8.pl-2.pl-sm-15
+							.form-group.pay-card-number
 								input.form-control(type="text" placeholder="Введите номер карты" required)
 								small 4444 2222 5555 2222
-					.form-group
-						input.form-control(type="text" placeholder="Введите" required)
-						small MM / YY
-					.form-group
-						input.form-control(type="text" placeholder="Введите имя владельца карты" required)
-						small Андреева Марина Сергеевна
-					.form-group
-						small 90055 / 5568 Z 58999856
-					img.ml-10.ml-xl-20(src="./images/bank-card-3.png", alt="")
+					.row
+						.col-6.col-sm-5
+							.form-group.pay-card-date
+								input.form-control(type="text" placeholder="Введите" required)
+								small MM / YY
+					.row
+						.col-12
+							.form-group.pay-card-holder
+								input.form-control(type="text" placeholder="Введите имя владельца карты" required)
+								small Андреева Марина Сергеевна
+					.row
+						.col-8
+							.form-group.pay-card-id
+								small 90055 / 5568 Z 58999856
+						.col-4.text-right
+							img(src="./images/bank-card-4.png", alt="", style="margin-top: -15px;")
 				.pay-card-back
 					.pay-card-line
-					.pay-card-cvc
-						input.form-control(type="text" placeholder="CVV / CVC")
-						small 444
+					.form-group
+						label Подпись не требуется
+						.pay-card-cvc
+							input.form-control(type="text" placeholder="CVV / CVC")
+							small 444
+					.pay-card-note Карта может быть использована только лицом, имя которого указано на карте.#[br]Карта является собственностью банка.
 						
-			.text-center.mt-70.w-100
+			.text-center.mt-50.mt-sm-70.w-100
 				button.btn.btn-outline-danger.pl-70.pr-70(type="submit") Оплатить

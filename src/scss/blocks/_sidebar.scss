@@ -1,14 +1,7 @@
 .sidebar {
   position: relative;
   width: 318px;
-  padding: 18px 0 0;
-  margin-bottom: 350px;
   border-radius: 15px 0 15px 15px;
-
-  background-image: url(../images/bg-pattern.png), url(../images/bg-sidebar.png);
-  background-repeat: repeat, no-repeat;
-  background-position: 0 0, 0 0;
-  background-size: auto, cover;
 
   @media (min-width: 1200px) {
     display: block!important;
@@ -22,7 +15,6 @@
     z-index: 10;
     width: 386px;
     max-width: 100%;
-    padding-top: 12px;
   }
   @media (max-width: 1100px) {
     width: 325px;
@@ -32,13 +24,51 @@
   }
   @media (max-width: 480px) {
     width: 100%;
-    padding-top: 20px;
   }
 
   .logo {
     margin-bottom: 15px;
     @media (max-width: 1487px) {
       margin-bottom: 25px;
+    }
+  }
+
+  &-fixed {
+    width: 318px;
+    // max-height: 100vh;
+    // overflow: auto;
+    
+    @media (max-width: 1487px) {
+      width: 255px;
+    }
+    @media (max-width: 1199px) {
+      position: static;
+      width: 100%;
+      margin: 0x;
+    }
+    @media (max-width: 480px) {
+    }
+    &.fixed {
+      position: fixed;
+      top: 0!important;
+      //margin-left: -9px;
+    }
+    &.absolute {
+      position: absolute;
+    }
+  }
+
+  &-bg {
+    padding: 18px 0 0;
+    background-image: url(../images/bg-pattern.png), url(../images/bg-sidebar.png);
+    background-repeat: repeat, no-repeat;
+    background-position: 0 0, 0 0;
+    background-size: auto, cover;
+    @media (max-width: 1199px) {
+      padding-top: 12px;
+    }
+    @media (max-width: 480px) {
+      padding-top: 20px;
     }
   }
 
@@ -154,10 +184,9 @@
   }
 
   &-filter {
-    position: absolute;
-    top: 100%; left: 0;
+    position: relative;
+    top: -28px; left: 0;
     width: 100%;
-    margin-top: -28px;
     padding: 0;
     border-radius: 15px;
     background: $white;
@@ -207,6 +236,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      outline: none!important;
       
       @media (max-width: 413px) {
         padding: 8px 30px;
@@ -225,7 +255,7 @@
       &:before {
         content: '';
         position: absolute;
-        bottom: 2px; left: 47px;
+        bottom: 4px; left: 42px;
         z-index: 0;
         width: 185px; height: 4px;
         background-image: url(../images/sprites/svg/filter-hover.svg);
